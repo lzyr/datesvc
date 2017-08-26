@@ -1,3 +1,5 @@
 #! /bin/sh
 # Launch datesvc
-python2 src/datesvc.py 8081
+PORT=8082
+(sleep 1; xdg-open http://0.0.0.0:$PORT/now ) &
+python2 src/datesvc.py $PORT 
