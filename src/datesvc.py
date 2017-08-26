@@ -15,14 +15,10 @@ app = web.application(urls, globals())
 class Now:
     def GET(self):
         now = date.today()
-        """return 'Hello'"""
         strf = 'Today is %s ' % now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B.")
         daySinceEpoch = (now - date(1970, 1, 1)).days
-        stEpoch = '%s since Unix Epoch' % daySinceEpoch
+        stEpoch = '%s days since Unix Epoch' % daySinceEpoch
         return strf + '\n' + stEpoch
-        #        return """\
-        #        %s
-        #%s """ % (strf, stEpoch)
 
 
 if __name__ == "__main__":
